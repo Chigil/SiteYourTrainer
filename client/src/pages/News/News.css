@@ -13,25 +13,26 @@
 }
 
 .news__content h1 {
-    font-family: Roboto;
+    margin-right: 10px;
     font-style: normal;
     height: 40px;
     font-weight: normal;
-    font-size: 45px;
+    font-size: 30px;
     line-height: 53px;
     color: #FFFFFF;
     letter-spacing: -0.015em;
+    padding-bottom: 10px;
 }
 
 .news__container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     width: 1000px;
-    height: 545px;
+    height: 600px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
     border-radius: 25px;
-    align-items: flex-end;
     justify-content: center;
+    align-content: center;
 }
 .news__content{
     flex-wrap: wrap;
@@ -39,18 +40,36 @@
     display: flex;
     flex-direction: row;
 }
+.news-page__img{
+    display: flex;
+    flex-direction: column;
+    width: 235px;
+    height: 300px;
+    background: linear-gradient(147.15deg, rgba(138, 32, 37, 0.3) 2.64%, rgba(0, 0, 0, 0.3) 100%);
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.image-upload{
+    display: none;
+}
+.image-upload-label{
+    padding: 5px;
+    border: 2px black dashed;
+    border-radius: 15px;
+}
 .news-page__review {
+    margin: 0 0 10px 10px;
     flex-wrap: wrap;
     padding: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 680px;
     height: 300px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
+    border: 1px solid black;
     border-radius: 25px;
-    font-size: 35px;
+    font-size: 25px;
     line-height: 41px;
     letter-spacing: -0.015em;
     color: #FFFFFF;
@@ -64,24 +83,23 @@
 .review__content {
     display: grid;
     overflow: auto;
-    font-size: 30px;
+    font-size: 22px;
     grid-template-rows: repeat(4, 4fr);
 }
 
 .review__container {
     height: 80px;
-
     display: grid;
     grid-template-columns: 80% 20%;
     align-items: center;
-
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
     border-radius: 25px;
 }
 
 .review__news{
+    box-sizing: border-box;
     width: 940px;
     height: 160px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
     border-radius: 25px;
+    border: 1px solid black;
+    padding: 20px;
 }

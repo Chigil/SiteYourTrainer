@@ -20,7 +20,7 @@
     }
 
     .header_nav {
-        background: #740005;
+        background: #8A2025;
         display: flex;
         justify-content: flex-end;
         flex-wrap: wrap;
@@ -65,7 +65,7 @@
         top: 0;
         left: 0;
         height: 70px;
-        background: #740005;
+        background: #8A2025;
         z-index: 3;
     }
 

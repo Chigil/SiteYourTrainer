@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import strong from "../../../img/strong.png";
-import weight from "../../../img/weight.png";
-import stamina from "../../../img/stamina.png";
+import strong from "../../../svg/dumbbell.svg";
+import weight from "../../../svg/heart-rate.svg";
+import stamina from "../../../svg/stationary-bike.svg";
 import Tilt from 'react-vanilla-tilt'
 import './workout-section.css'
 

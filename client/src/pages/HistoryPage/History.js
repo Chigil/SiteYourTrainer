@@ -1,8 +1,13 @@
 import "./History.css"
-import React from "react"
+import React, {useContext, useState} from "react"
 import arrow from "../../svg/arrow-circle-right-solid.svg"
-import list from "../../svg/list-alt-regular.svg"
-const History = () => {
+import DatePicker from "../../components/DatePicker";
+import {observer} from "mobx-react-lite";
+import {Context} from "../../index";
+
+const History = observer(() => {
+    const [date,setDate] = useState('')
+    const {training} = useContext(Context)
     return (
         <div className="history">
             <div className="history__content">
@@ -11,8 +16,10 @@ const History = () => {
                     <div className="history__fill">
                         <h3 className="fill-date__header">Date:</h3>
                         <div className="fill-date__container">
-                            <input className="fill-date__input"/>
-                            <div className="fill-date__button"><img src={list}/></div>
+                            <DatePicker
+                                date={date}
+                                setDate={setDate}
+                            />
                         </div>
                     </div>
                     <div className="history-page__review">
@@ -33,6 +40,6 @@ const History = () => {
             </div>
         </div>
     )
-}
+})
 
 export default History

@@ -1,43 +1,47 @@
+import {
+    HISTORY_ROUTE,
+    NEWS_ROUTE,
+    NUTRITION_ROUTE, PROGRAM_ROUTE,
+    RECORD_ROUTE,
+    SETTING_ROUTE,
+    TRAINING_ROUTE,
+    WEIGHT_ROUTE
+} from "../../utils/consts";
 
 export const NavigationBarItem = [
     {
-        href:"/news",
+        href:NEWS_ROUTE,
         cName:"newspaper-o",
         title:"News"
     },
     {
-        href:"/program",
+        href:PROGRAM_ROUTE,
         cName:"leanpub",
         title:"My program"
     },
     {
-        href:"/nutrition",
+        href:NUTRITION_ROUTE,
         cName:"cutlery",
         title:"My nutrition"
     },
     {
-        href:"/weight",
+        href:WEIGHT_ROUTE,
         cName:"male",
         title:"Weight"
     },
     {
-        href:"/record",
+        href:RECORD_ROUTE,
         cName:"trophy",
         title:"Record"
     },
     {
-        href:"/history",
+        href:HISTORY_ROUTE,
         cName:"history",
         title:"History"
     },
     {
-        href:"/setting",
+        href:SETTING_ROUTE,
         cName:"cog",
         title:"Settings"
     },
-    {
-        href:"/info",
-        cName:"info-circle",
-        title:"Info"
-    }
 ]

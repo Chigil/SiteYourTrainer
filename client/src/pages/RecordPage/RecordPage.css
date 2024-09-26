@@ -10,16 +10,18 @@
 
 .record-page__container h1{
     color:#FFFFFF;
-    font-size: 45px;
+    font-size: 35px;
     line-height: 53px;
     letter-spacing: -0.015em;
+    padding-bottom: 50px;
 }
+
 .record-page__fill {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
     width: 450px;
-    height: 700px;
+    height: 650px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     justify-content: flex-start;
@@ -100,8 +102,9 @@
 }
 
 .weight__fill_kg input{
-    width: 200px;
+    width: 170px;
 }
+
 .weight__fill_number .weight__fill_number__num{
     text-align: center;
     align-items: center;
@@ -110,6 +113,7 @@
     background: #740005;
     border-radius: 20px;
 }
+
 .table-record{
     width: 900px;
     height: 700px;
@@ -127,38 +131,51 @@
 }
 
 .table-record__review{
+    overflow: auto;
     width: 850px;
     height: 525px;
+    padding: 0 10px;
+    text-align: center;
     display: grid;
-    grid-template-rows: 50px 50px;
+    grid-template-rows: 15% 85%;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
     border-radius: 25px;
 }
 
-.table-record__review .review__header{
+.record-review__container{
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.table-record__review .record-review__header{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     padding: 15px;
 }
 
-.table-record__review .review__container{
+.table-record__review .record-review__container{
+    height: 50px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    background: #FFFFFF;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 }
 
-.review__container_del{
-    width:45px;
-    height:45px;
+.record-review__container_del{
+    width:25px;
+    height:25px;
 }
 
-.review__container_view{
-    width:45px;
-    height:45px;
+
+.record-review__container_view{
+    width:25px;
+    height:25px;
 }
 
-.review__container_del img{
+.record-review__container_del img{
     width:100%;
     height:100%;
 }

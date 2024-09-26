@@ -1,0 +1,58 @@
+.input {
+    width: 50px;
+    background: #ffffff;
+}
+.exercise-name_input{
+    font-size: 22px;
+    width: 150px;
+    height: 48px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+.wrapper-exercise{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    min-height: 250px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+}
+.wrapper-exercise_name{
+    display: flex;
+
+}
+.wrapper-exercise p{
+    color:#ffffff;
+}
+
+.exercise-num_input{
+    width: 50px;
+}
+.exercise-data_content{
+    display: flex;
+}
+.exercise-data{
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.close{
+    float: right;
+}
+.exercise__button_add{
+    width: 140px;
+    height: 50px;
+    margin: 30px 25%;
+    background: #821A1E;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}
+

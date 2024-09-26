@@ -23,43 +23,45 @@ const NutritionSectionContent = () => {
 
     return (
         <React.Fragment>
-            <div className="nutrition-description">
-                <h1>CREATE YOUR
-                    DIET</h1>
-                <div className="nutrition-icons">
-                    <div className="nutrition-icon__container">
-                        <div className="nutrition-icon__content">
-                            <img src={protein}/>
-                            <p>Protein</p>
-                        </div>
-                        <div className="nutrition-icon__content">
-                            <img src={fat}/>
-                            <p>Fat</p>
-                        </div>
-                        <div className="nutrition-icon__content">
-                            <img src={fruit}/>
-                            <p>Сarbs</p>
+            <div className="nutrition-background">
+                <div className="nutrition-description">
+                    <h1>CREATE YOUR
+                        DIET</h1>
+                    <div className="nutrition-icons">
+                        <div className="nutrition-icon__container">
+                            <div className="nutrition-icon__content">
+                                <img src={protein}/>
+                                <p>Protein</p>
+                            </div>
+                            <div className="nutrition-icon__content">
+                                <img src={fat}/>
+                                <p>Fat</p>
+                            </div>
+                            <div className="nutrition-icon__content">
+                                <img src={fruit}/>
+                                <p>Сarbs</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <h2>Special for you creating a nutrition program
+                    <h2>Special for you creating a nutrition program
 
-                    You can keep track of your diet by counting the number of calories in each meal,
-                    without going over
-                    the limit</h2>
-            </div>
-            <Swiper
-                className="nutrition-img"
-                tag="ul"
-                pagination={{clickable: true}}
-                autoplay={{delay:2000, disableOnInteraction: false }}
-                effect="fade"
-                >
-                <div className="swiper-wrapper">
-                {slides}
+                        You can keep track of your diet by counting the number of calories in each meal,
+                        without going over
+                        the limit</h2>
                 </div>
-                <div className="swiper-pagination"></div>
-            </Swiper>
+                <Swiper
+                    className="nutrition-img"
+                    tag="ul"
+                    pagination={{clickable: true}}
+                    autoplay={{delay:2000, disableOnInteraction: false }}
+                    effect="fade"
+                    >
+                    <div className="swiper-wrapper">
+                    {slides}
+                    </div>
+                    <div className="swiper-pagination"></div>
+                </Swiper>
+            </div>
 </React.Fragment>
 )
 }

@@ -1,3 +1,14 @@
+.nutrition-background{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 1350px;
+    height: 700px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding-left: 35px;
+}
 
 .nutrition-icon__container {
     display: flex;

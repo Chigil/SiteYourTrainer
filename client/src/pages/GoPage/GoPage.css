@@ -2,14 +2,16 @@
     display: flex;
     flex-wrap: wrap;
     min-height: 1080px;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    background-image: url(../../img/go_bg.jpg);
+    background-image: url(../../img/training_comp.jpeg);
     background-size: cover;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     box-sizing: border-box;
-    font-size: 25px;
-    line-height: 29px;
+    font-size: 22px;
+    line-height: 26px;
     color:#fff;
 }

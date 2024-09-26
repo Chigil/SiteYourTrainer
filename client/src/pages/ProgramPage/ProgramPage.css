@@ -5,34 +5,51 @@
     align-content: center;
     flex-wrap: wrap;
     align-items: center;
-
 }
 
-.program__container h1{
-    color:#FFFFFF;
-    font-size: 45px;
+.program__name {
+    display: flex;
+    padding-top: 25px;
+}
+
+.program__name input {
+    margin-left: 15px;
+}
+
+.program__container h1 {
+    color: #FFFFFF;
+    font-size: 35px;
     line-height: 53px;
     letter-spacing: -0.015em;
+    padding-bottom: 0;
+    margin: 20px;
+    text-align: center;
+    width: 100%;
 }
+
+.data__container {
+    margin: 25px;
+}
+
 .program__fill {
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
-    width: 450px;
-    min-height: 700px;
+    width: 420px;
+    min-height: 600px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
     margin: 50px;
+    align-items: flex-start;
 
 }
 
 .program__form {
+    overflow: auto;
+    box-sizing: border-box;
     width: 350px;
     display: flex;
-    min-height: 445px;
+    max-height: 445px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 25px;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
@@ -41,11 +58,12 @@
     flex-wrap: wrap;
     padding-left: 20px;
     align-items: center;
+    margin: 25px;
 }
 
-.program__form h3{
-    font-size: 24px;
-    line-height: 28px;
+.program__form h3 {
+    font-size: 22px;
+    line-height: 26px;
     letter-spacing: -0.015em;
     color: #FFFFFF;
     margin: 10px auto;
@@ -75,23 +93,31 @@
     height: 50px;
     margin: 30px auto;
     background: #821A1E;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 28px;
     letter-spacing: -0.015em;
     color: #FFFFFF;
 }
+
 .weight__form_grid {
     flex-wrap: wrap;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-.weight__fill_kg input{
-    width: 200px;
+.weight__fill_kg input {
+    width: 170px;
 }
-.weight__fill_number .weight__fill_number__num{
+
+.weight__fill_number {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weight__fill_number .weight__fill_number__num {
     text-align: center;
     align-items: center;
     width: 63px;
@@ -99,13 +125,12 @@
     background: #740005;
     border-radius: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.timetable{
-    width: 1080px;
-    height: 700px;
+.timetable {
+    width: 900px;
+    height: 800px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     display: flex;
@@ -115,59 +140,41 @@
     flex-wrap: wrap;
 }
 
-.timetable__container{
+.timetable__container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1000px;
-    height: 545px;
+    flex-direction: row;
+    width: 810px;
+    height: 650px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(152, 152, 152, 0.6) 100%);
     border-radius: 25px;
+    box-sizing: border-box;
+    padding: 20px;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
-.timetable h1{
+.timetable h1 {
     padding-bottom: 25px;
 }
-.timetable__nav{
+
+.training-card {
     display: flex;
-    flex-wrap: wrap;
-    align-self: flex-end;
-    padding:20px 20px 15px 0;
-}
-
-.timetable__review{
-    width: 945px;
-    height: 480px;
-    display: grid;
-    grid-template-rows: 85px 1fr;
-    background: #740005;
+    width: 200px;
+    height: 235px;
+    background: rgba(0, 0, 0, 0.8);;
     border-radius: 25px;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 25px;
 }
 
-.timetable__review .timetable-review__header{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 15px;
+.training-card_buttons {
+    display: flex;
+    align-items: center;
 }
 
-.timetable__nav_left{
-    width:30px;
-    height:30px;
-}
-
-.timetable__nav_right{
-    width:30px;
-    height:30px;
-}
-
-.timetable__review .timetable-review__container{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background: #C4C4C4;
-    border-radius: 0px 0px 20px 20px;
-}
-
-.exercise-plus{
-    width:50px;
-    height:50px;
+.training-card_info {
+    width: 35px;
+    height: 35px;
+    padding-right: 25px;
 }

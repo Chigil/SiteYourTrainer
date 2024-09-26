@@ -1,10 +1,36 @@
 import "./NutritionPage.css"
-import React from "react"
+import React, {useContext, useState} from "react"
+import DatePicker from "../../components/DatePicker";
+import {observer} from "mobx-react-lite";
+import NutritionCalories from "../../components/NutritionCalories";
+import {createNutrition, getNutrition} from "../../http/nutritionApi";
+import {Context} from "../../index";
+import useInput from "../../components/Validator"
+import jwt_decode from "jwt-decode";
 
-import list from "../../svg/list-alt-regular.svg"
-import trash from "../../svg/trash-alt-solid.svg"
+const NutritionPage = observer(() => {
+    const {training, snackBar} = useContext(Context)
+    const [date, setDate] = useState('')
+    const [name, setName] = useState('')
+    const calories = useInput('0', {isEmpty: true, isNumber: true})
+    const calorieTotal = Object.values(training.nutrition).reduce((totalCalories, nutrition) => totalCalories + nutrition.calories, 0);
+    const request = {
+        date: date,
+        name_nutrition: name,
+        calories: calories.value,
+        userId: jwt_decode(localStorage.token).id
+    };
 
-const NutritionPage = () => {
+    const addNutrition = () => {
+        createNutrition(request).then(() => {
+            getNutrition().then(data => training.setNutrition(data));
+            snackBar.openSnackBar("success", "Created");
+            setDate('');
+            setName('');
+            calories.setValue('0');
+        }).catch(() => snackBar.openSnackBar("error", "Enter all input please!"));
+    }
+
     return (
         <React.Fragment>
             <div className="nutrition-page">
@@ -14,21 +40,36 @@ const NutritionPage = () => {
                         <div className="nutrition-page__fill">
                             <h3 className="fill-date__header">Date:</h3>
                             <div className="fill-date__container">
-                                <input className="fill-date__input"/>
-                                <div className="fill-date__button"><img src={list}/></div>
+                                <DatePicker
+                                    date={date}
+                                    setDate={setDate}
+                                />
                             </div>
                             <div className="calories__form">
                                 <ul className="calories__items">
                                     <li className="calories__item">
                                         <h3>Name eating:</h3>
-                                        <input/>
+                                        <input
+                                            value={name}
+                                            onChange={e => setName(e.target.value)}
+                                        />
                                     </li>
                                     <li className="calories__item">
                                         <h3>Calories:</h3>
-                                        <input/>
+                                        <input
+                                            value={calories.value}
+                                            onChange={calories.onChange}
+                                            onBlur={e => calories.onBlur(e)}
+                                        />
+                                        {(calories.isDirty && calories.isEmpty) && calories.messageError("Input value")}
+                                        {(calories.isDirty && calories.numberError) && calories.messageError("Only numbers")}
                                     </li>
                                 </ul>
-                                <button className="calories__button_save">Add</button>
+                                <button
+                                    className="calories__button_save"
+                                    onClick={addNutrition}
+                                >Add
+                                </button>
                             </div>
                         </div>
                         <div className="nutrition-page__review">
@@ -41,28 +82,14 @@ const NutritionPage = () => {
                                 </div>
                             </div>
                             <div className="nutrition-review__content">
-                                <div className="nutrition-review__container">
-
-                                    <div className="nutrition-review__header_food-name">
-                                        1 breakfrest
-                                    </div>
-                                    <div className="nutrition-review__calories_number">
-                                        700
-                                    </div>
-
-                                    <div className="nutrition-review__button_delete">
-                                        <img src={trash}/>
-                                    </div>
-                                </div>
-
+                                <NutritionCalories/>
                             </div>
-
                             <div className="nutrition-review__result">
                                 <div className="nutrition-review__header_total">
                                     Total Calories:
                                 </div>
                                 <div className="nutrition-review__number_total">
-                                    2600
+                                    {calorieTotal}
                                 </div>
                             </div>
                         </div>
@@ -71,5 +98,5 @@ const NutritionPage = () => {
             </div>
         </React.Fragment>
     )
-}
+})
 export default NutritionPage

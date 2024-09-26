@@ -1,5 +1,5 @@
 import "./GoPage.css"
-import React from "react"
+import React, {useContext, useEffect} from "react"
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import {BrowserRouter, Route} from "react-router-dom";
 import NutritionPage from "../NutritionPage/NutritionPage";
@@ -8,9 +8,22 @@ import RecordPage from "../RecordPage/RecordPage";
 import ProgramPage from "../ProgramPage/ProgramPage";
 import News from "../News/News";
 import History from "../HistoryPage/History";
+import {observer} from "mobx-react-lite";
+import {getWeight} from "../../http/weightAPI";
+import {Context} from "../../index";
+import {getNutrition} from "../../http/nutritionApi";
+import {getRecord} from "../../http/recordApi";
+import {getTraining} from "../../http/trainingApi";
 
 
-const GoPage = () => {
+const GoPage = observer(() => {
+    const {training} = useContext(Context)
+    useEffect(() => {
+        getWeight().then(data => training.setWeight(data))
+        getNutrition().then(data => training.setNutrition(data))
+        getRecord().then(data => training.setRecord(data))
+        getTraining().then(data => training.setTraining(data))
+    }, [])
     return (
         <BrowserRouter>
             <div className="go-page">
@@ -24,6 +37,6 @@ const GoPage = () => {
             </div>
         </BrowserRouter>
     )
-}
+})
 
 export default GoPage

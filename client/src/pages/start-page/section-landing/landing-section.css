@@ -25,7 +25,7 @@
 
 .header-color-text {
     font-size: calc(34px + 16 * (100vw / 1920));
-    color: #740005;
+    color: #8A2025;
 }
 
 .intro_description {
@@ -41,7 +41,7 @@
     height: 80px;;
     color:#ffffff;
     background-color: Transparent;
-    border: 2px #740005 solid;
+    border: 3px #8A2025 solid;
     border-radius: 15px;
     text-align: center;
     font-size: 30px;
@@ -49,5 +49,5 @@
 }
 
 .intro_button:hover{
-    background-color: #740005;
+    background-color: #8A2025;
 }
